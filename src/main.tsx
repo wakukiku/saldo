@@ -41,6 +41,7 @@ const Subscriptions = lazy(() =>
 const Goals = lazy(() => import("./pages").then((m) => ({ default: m.Goals })));
 import { Editor, type Overlay } from "./editors";
 import { Logo } from "./ui";
+import { AuthorMark } from "./AuthorMark";
 import { monthLabel, useStore, type Transaction } from "./store";
 import "./styles.css";
 const nav = [
@@ -240,6 +241,7 @@ function App() {
           notify={setToast}
         />
       )}
+      <AuthorMark />
       <div className="toast-region" aria-live="polite">
         {toast && (
           <div className="toast">
